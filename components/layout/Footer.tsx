@@ -16,7 +16,8 @@ const footerLinks = {
     { label: "eCommerce",            href: "/industries/ecommerce" },
     { label: "NDIS Providers",       href: "/industries/ndis" },
     { label: "Events & Entertainment", href: "/industries/events" },
-    { label: "Professional Services", href: "/industries/hospitality" },
+    { label: "Professional Services", href: "/industries/professional-services" },
+    { label: "Consumer Products",     href: "/industries/consumer-products" },
   ],
   resources: [
     { label: "Blog",                       href: "/blog" },

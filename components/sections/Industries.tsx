@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, UtensilsCrossed, ShoppingCart, Heart, Calendar, Briefcase } from "lucide-react";
+import { ArrowRight, UtensilsCrossed, ShoppingCart, Heart, Calendar, Briefcase, Package } from "lucide-react";
 
 const industries = [
   {
@@ -37,8 +37,15 @@ const industries = [
     icon: Briefcase,
     name: "Professional Services",
     description: "Time-based pricing, project profitability, utilisation analysis and financial planning for consulting and professional services firms.",
-    href: "/industries/hospitality",
+    href: "/industries/professional-services",
     highlight: "Project profitability",
+  },
+  {
+    icon: Package,
+    name: "Consumer Products",
+    description: "Landed cost analysis, channel profitability, wholesale pricing and margin optimisation for consumer brands selling online and through retail partners.",
+    href: "/industries/consumer-products",
+    highlight: "Wholesale margins & landed costs",
   },
 ];
 

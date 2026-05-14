@@ -18,10 +18,12 @@ const services = [
 ];
 
 const industries = [
-  { label: "Hospitality",         href: "/industries/hospitality" },
-  { label: "eCommerce",           href: "/industries/ecommerce" },
-  { label: "NDIS Providers",      href: "/industries/ndis" },
+  { label: "Hospitality",            href: "/industries/hospitality" },
+  { label: "eCommerce",              href: "/industries/ecommerce" },
+  { label: "NDIS Providers",         href: "/industries/ndis" },
   { label: "Events & Entertainment", href: "/industries/events" },
+  { label: "Professional Services",  href: "/industries/professional-services" },
+  { label: "Consumer Products",      href: "/industries/consumer-products" },
 ];
 
 const resources = [

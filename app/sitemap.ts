@@ -14,6 +14,8 @@ const STATIC_ROUTES: { url: string; changeFrequency: MetadataRoute.Sitemap[0]["c
   { url: "/industries/ecommerce", changeFrequency: "monthly", priority: 0.85 },
   { url: "/industries/ndis", changeFrequency: "monthly", priority: 0.85 },
   { url: "/industries/events", changeFrequency: "monthly", priority: 0.85 },
+  { url: "/industries/professional-services", changeFrequency: "monthly", priority: 0.85 },
+  { url: "/industries/consumer-products", changeFrequency: "monthly", priority: 0.85 },
   { url: "/case-studies", changeFrequency: "weekly", priority: 0.8 },
   { url: "/blog", changeFrequency: "daily", priority: 0.85 },
   { url: "/contact", changeFrequency: "monthly", priority: 0.8 },

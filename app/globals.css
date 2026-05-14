@@ -50,10 +50,31 @@
   .text-gradient-teal {
     @apply bg-gradient-to-r from-brand-teal-400 to-brand-teal-300 bg-clip-text text-transparent;
   }
-  /* Hero dark background — navy to brand-blue */
+  /* Hero background — brand gradient with gradient image overlay */
   .bg-hero {
-    background: linear-gradient(135deg, #111849 0%, #1A2468 45%, #3D55D6 100%);
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(17,24,73,0.92) 0%, rgba(26,36,104,0.80) 40%, rgba(26,36,104,0.65) 100%),
+      url('/images/hero-gradient.jpg') center/cover no-repeat;
+    overflow: hidden;
   }
+  /* Teal wave lines rendered as a CSS pseudo-element — applies to all bg-hero sections */
+  .bg-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 560' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='rgba(62%2C203%2C160%2C0.18)' stroke-width='1.5' d='M0%2C280 C360%2C160 720%2C400 1080%2C280 C1260%2C220 1380%2C320 1440%2C280'/%3E%3Cpath fill='none' stroke='rgba(62%2C203%2C160%2C0.10)' stroke-width='1' d='M0%2C340 C360%2C220 720%2C460 1080%2C340 C1260%2C280 1380%2C380 1440%2C340'/%3E%3Cpath fill='none' stroke='rgba(255%2C255%2C255%2C0.05)' stroke-width='1' d='M0%2C220 C360%2C100 720%2C340 1080%2C220 C1260%2C160 1380%2C260 1440%2C220'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Ensure children of bg-hero sit above the wave pseudo-element */
+  .bg-hero > * {
+    position: relative;
+    z-index: 1;
+  }
+  /* Legacy utility kept for any explicit usage */
+  .hero-wave { display: none; }
   .bg-section-alt { @apply bg-slate-50; }
   .section-padding { @apply py-16 md:py-24; }
   .card-hover { @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1; }
