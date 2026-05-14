@@ -14,7 +14,7 @@ const services = [
     href: "/fractional-cfo",
     price: "From AUD $1,500/month",
     highlights: ["Monthly management reporting", "Cash flow management", "Board reporting", "Strategic finance advice"],
-    color: "blue" as const,
+    accent: "blue" as const,
   },
   {
     icon: Search,
@@ -24,7 +24,7 @@ const services = [
     href: "/pricing-profitability",
     price: "From AUD $3,500",
     highlights: ["Pricing strategy", "Product & channel profitability", "Margin optimisation", "Scenario modelling"],
-    color: "green" as const,
+    accent: "teal" as const,
   },
   {
     icon: LineChart,
@@ -34,7 +34,7 @@ const services = [
     href: "/financial-modelling",
     price: "From AUD $2,500",
     highlights: ["Three-way financial models", "Pricing models", "Scenario analysis", "Investment cases"],
-    color: "blue" as const,
+    accent: "blue" as const,
   },
   {
     icon: Cog,
@@ -44,36 +44,42 @@ const services = [
     href: "/finance-function-advisory",
     price: "Project-based",
     highlights: ["ERP implementation", "Process redesign", "Controls & governance", "Reporting enhancement"],
-    color: "green" as const,
+    accent: "teal" as const,
   },
 ];
 
-const colorMap = {
+const accentMap = {
   blue: {
-    icon: "bg-brand-blue-50 text-brand-blue-600",
-    badge: "text-brand-blue-600 bg-brand-blue-50",
-    hover: "hover:border-brand-blue-200",
-    dot: "bg-brand-blue-500",
+    iconBg:    "bg-brand-blue-50",
+    iconColor: "text-brand-blue-600",
+    badge:     "text-brand-blue-600 bg-brand-blue-50",
+    border:    "hover:border-brand-blue-200",
+    dot:       "bg-brand-blue-500",
+    check:     "text-brand-blue-500",
+    topBar:    "bg-brand-blue-500",
   },
-  green: {
-    icon: "bg-brand-green-50 text-brand-green-600",
-    badge: "text-brand-green-700 bg-brand-green-50",
-    hover: "hover:border-brand-green-200",
-    dot: "bg-brand-green-500",
+  teal: {
+    iconBg:    "bg-brand-teal-50",
+    iconColor: "text-brand-teal-500",
+    badge:     "text-brand-teal-600 bg-brand-teal-50",
+    border:    "hover:border-brand-teal-200",
+    dot:       "bg-brand-teal-400",
+    check:     "text-brand-teal-500",
+    topBar:    "bg-brand-teal-400",
   },
 };
 
 export function Services() {
   return (
-    <section className="section-padding bg-section-alt">
+    <section className="section-padding bg-white">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block text-sm font-semibold text-brand-green-700 bg-brand-green-50 px-3 py-1 rounded-full mb-4">
+          <div className="inline-block text-sm font-semibold text-brand-teal-600 bg-brand-teal-50 px-3 py-1 rounded-full mb-4">
             Our Services
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy">
             Everything You Need to{" "}
-            <span className="text-gradient-green">Improve Profitability</span>
+            <span className="text-gradient-teal">Improve Profitability</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600">
             From one-off pricing reviews to ongoing Fractional CFO support, Marginfy
@@ -83,7 +89,7 @@ export function Services() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {services.map((service, i) => {
-            const colors = colorMap[service.color];
+            const a = accentMap[service.accent];
             return (
               <motion.div
                 key={service.title}
@@ -91,13 +97,16 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className={`group p-8 rounded-2xl border border-slate-200 bg-white ${colors.hover} hover:shadow-lg transition-all duration-300`}
+                className={`group relative p-8 rounded-2xl border border-slate-200 bg-white ${a.border} hover:shadow-xl transition-all duration-300 overflow-hidden`}
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`w-12 h-12 rounded-xl ${colors.icon} flex items-center justify-center`}>
-                    <service.icon className="w-6 h-6" />
+                {/* Top accent bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1 ${a.topBar}`} />
+
+                <div className="flex items-start justify-between mb-6 pt-2">
+                  <div className={`w-12 h-12 rounded-xl ${a.iconBg} flex items-center justify-center`}>
+                    <service.icon className={`w-6 h-6 ${a.iconColor}`} />
                   </div>
-                  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${colors.badge}`}>
+                  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${a.badge}`}>
                     {service.price}
                   </span>
                 </div>
@@ -107,8 +116,8 @@ export function Services() {
 
                 <ul className="space-y-2 mb-6">
                   {service.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-2 text-sm text-slate-700">
-                      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${colors.dot}`} />
+                    <li key={h} className="flex items-center gap-2.5 text-sm text-slate-700">
+                      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${a.dot}`} />
                       {h}
                     </li>
                   ))}
@@ -116,7 +125,7 @@ export function Services() {
 
                 <Link
                   href={service.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue-600 hover:text-brand-blue-700 group/link"
+                  className={`inline-flex items-center gap-1.5 text-sm font-semibold ${a.iconColor} hover:opacity-80 group/link`}
                 >
                   Learn more
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />

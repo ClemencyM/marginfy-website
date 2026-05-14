@@ -35,12 +35,12 @@ export function SoftwareSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block text-sm font-semibold text-brand-green-400 bg-white/10 px-3 py-1 rounded-full mb-4 border border-white/20">
+            <div className="inline-block text-sm font-semibold text-brand-teal-400 bg-white/10 px-3 py-1 rounded-full mb-4 border border-white/20">
               Marginfy Software
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Profitability Intelligence Software Built for{" "}
-              <span className="text-brand-green-400">Decision-Makers</span>
+              <span className="text-brand-teal-400">Decision-Makers</span>
             </h2>
             <p className="text-white/75 text-lg leading-relaxed mb-8">
               Stop waiting for month-end reports. Marginfy Software gives you
@@ -80,7 +80,7 @@ export function SoftwareSection() {
                 transition={{ duration: 0.3, delay: i * 0.07 }}
                 className="p-5 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/15 transition-colors"
               >
-                <feature.icon className="w-6 h-6 text-brand-green-400 mb-3" />
+                <feature.icon className="w-6 h-6 text-brand-teal-400 mb-3" />
                 <p className="text-white font-medium text-sm">{feature.label}</p>
               </motion.div>
             ))}

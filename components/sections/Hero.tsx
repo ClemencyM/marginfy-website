@@ -31,7 +31,7 @@ export function Hero() {
 
       {/* Radial glow */}
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-brand-blue-400/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-brand-green-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-brand-teal-500/10 rounded-full blur-3xl" />
 
       <div className="container relative z-10 py-32 pt-40">
         <div className="max-w-4xl mx-auto text-center">
@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm text-white/80 mb-8 backdrop-blur-sm"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-green-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-teal-400 animate-pulse" />
             Fractional CFO Services & Profitability Intelligence
           </motion.div>
 
@@ -52,7 +52,7 @@ export function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6"
           >
             Increase Your Margins{" "}
-            <span className="text-brand-green-400">Without Hiring</span>
+            <span className="text-brand-teal-400">Without Hiring</span>
             {" "}a Full-Time CFO
           </motion.h1>
 
@@ -92,7 +92,7 @@ export function Hero() {
           >
             {trustItems.map((item) => (
               <div key={item} className="flex items-center gap-2 text-white/80 text-sm">
-                <CheckCircle2 className="w-4 h-4 text-brand-green-400 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-brand-teal-400 flex-shrink-0" />
                 {item}
               </div>
             ))}

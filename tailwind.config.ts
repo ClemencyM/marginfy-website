@@ -84,6 +84,19 @@ const config: Config = {
           },
           navy: "#1A2468",
           dark: "#111849",
+          // brand-green aliases to brand-teal (same colour, used in legacy components)
+          green: {
+            50:  "#EAFAF5",
+            100: "#C8F2E3",
+            200: "#97E6CB",
+            300: "#65D9B3",
+            400: "#3ECBA0",
+            500: "#2EB88E",
+            600: "#229673",
+            700: "#1A745A",
+            800: "#125241",
+            900: "#0A3129",
+          },
         },
       },
       fontFamily: {

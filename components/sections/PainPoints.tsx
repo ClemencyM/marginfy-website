@@ -44,23 +44,28 @@ const pains = [
 
 export function PainPoints() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container">
+    <section className="section-padding bg-brand-dark relative overflow-hidden">
+      {/* Subtle teal glow top-right */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal-400/8 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle blue glow bottom-left */}
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block text-sm font-semibold text-brand-blue-600 bg-brand-blue-50 px-3 py-1 rounded-full mb-4">
+          <div className="inline-block text-sm font-semibold text-brand-teal-400 bg-brand-teal-400/10 border border-brand-teal-400/20 px-3 py-1 rounded-full mb-4">
             The Problem
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             Growing Revenue Doesn&apos;t Guarantee{" "}
-            <span className="text-gradient-blue">Growing Profits</span>
+            <span className="text-brand-teal-400">Growing Profits</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-white/60">
             Most founder-led businesses hit a wall where top-line growth stops translating
             into bottom-line results. These are the warning signs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {pains.map((pain, i) => (
             <motion.div
               key={pain.title}
@@ -68,13 +73,13 @@ export function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group p-6 rounded-xl border border-slate-200 hover:border-brand-blue-200 hover:shadow-md transition-all duration-300 bg-white"
+              className="group p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-teal-400/40 transition-all duration-300 backdrop-blur-sm"
             >
-              <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mb-4 group-hover:bg-brand-blue-50 transition-colors">
-                <pain.icon className="w-5 h-5 text-red-500 group-hover:text-brand-blue-600 transition-colors" />
+              <div className="w-10 h-10 rounded-lg bg-brand-teal-400/15 border border-brand-teal-400/20 flex items-center justify-center mb-4 group-hover:bg-brand-teal-400/25 transition-colors">
+                <pain.icon className="w-5 h-5 text-brand-teal-400" />
               </div>
-              <h3 className="font-semibold text-brand-navy mb-2">{pain.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">{pain.description}</p>
+              <h3 className="font-semibold text-white mb-2">{pain.title}</h3>
+              <p className="text-sm text-white/55 leading-relaxed">{pain.description}</p>
             </motion.div>
           ))}
         </div>
@@ -84,9 +89,9 @@ export function PainPoints() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 p-6 rounded-2xl bg-brand-blue-50 border border-brand-blue-100 max-w-2xl mx-auto text-center"
+          className="mt-12 p-6 rounded-2xl bg-brand-teal-400/10 border border-brand-teal-400/20 max-w-2xl mx-auto text-center"
         >
-          <p className="text-brand-navy font-medium">
+          <p className="text-white/80 font-medium">
             Sound familiar? You&apos;re not alone — and the solution isn&apos;t working harder.
             It&apos;s working with better financial intelligence.
           </p>

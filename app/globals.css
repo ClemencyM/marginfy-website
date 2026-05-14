@@ -50,6 +50,10 @@
   .text-gradient-teal {
     @apply bg-gradient-to-r from-brand-teal-400 to-brand-teal-300 bg-clip-text text-transparent;
   }
+  /* Alias: green = teal in this brand */
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-brand-teal-400 to-brand-teal-300 bg-clip-text text-transparent;
+  }
   /* Hero background — brand gradient with gradient image overlay */
   .bg-hero {
     position: relative;
@@ -67,11 +71,6 @@
     background-size: 100% 100%;
     pointer-events: none;
     z-index: 0;
-  }
-  /* Ensure children of bg-hero sit above the wave pseudo-element */
-  .bg-hero > * {
-    position: relative;
-    z-index: 1;
   }
   /* Legacy utility kept for any explicit usage */
   .hero-wave { display: none; }

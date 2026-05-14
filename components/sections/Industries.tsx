@@ -51,10 +51,10 @@ const industries = [
 
 export function Industries() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-slate-50">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block text-sm font-semibold text-brand-blue-600 bg-brand-blue-50 px-3 py-1 rounded-full mb-4">
+          <div className="inline-block text-sm font-semibold text-brand-teal-600 bg-brand-teal-50 px-3 py-1 rounded-full mb-4">
             Industries We Serve
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy">
@@ -78,13 +78,13 @@ export function Industries() {
             >
               <Link
                 href={industry.href}
-                className="group flex flex-col h-full p-6 rounded-2xl border border-slate-200 hover:border-brand-blue-200 hover:shadow-md transition-all duration-300 bg-white"
+                className="group flex flex-col h-full p-6 rounded-2xl border border-slate-200 hover:border-brand-teal-200 hover:shadow-md transition-all duration-300 bg-white"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-brand-blue-50 flex items-center justify-center group-hover:bg-brand-blue-100 transition-colors">
-                    <industry.icon className="w-5 h-5 text-brand-blue-600" />
+                  <div className="w-10 h-10 rounded-lg bg-brand-teal-50 flex items-center justify-center group-hover:bg-brand-teal-100 transition-colors">
+                    <industry.icon className="w-5 h-5 text-brand-teal-500" />
                   </div>
-                  <span className="text-xs font-medium text-brand-green-700 bg-brand-green-50 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-medium text-brand-teal-700 bg-brand-teal-50 px-2.5 py-1 rounded-full border border-brand-teal-100">
                     {industry.highlight}
                   </span>
                 </div>
@@ -92,7 +92,7 @@ export function Industries() {
                 <h3 className="font-bold text-brand-navy text-lg mb-2">{industry.name}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed flex-1">{industry.description}</p>
 
-                <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-blue-600 group-hover:gap-2.5 transition-all">
+                <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-teal-600 group-hover:gap-2.5 transition-all">
                   Learn more
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
