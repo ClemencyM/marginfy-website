@@ -115,6 +115,19 @@ export function Header() {
 
         {/* CTAs */}
         <div className="hidden lg:flex items-center gap-3">
+          <a
+            href="https://marginfy.vercel.app/auth/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              "px-3 py-2 text-sm font-medium rounded-lg transition-colors font-body",
+              scrolled
+                ? "text-slate-600 hover:text-brand-blue-500 hover:bg-slate-50"
+                : "text-white/90 hover:text-white hover:bg-white/10"
+            )}
+          >
+            Log In
+          </a>
           <Button variant="secondary" size="sm" asChild>
             <Link href="/book-a-call">Book a Call</Link>
           </Button>
@@ -154,6 +167,14 @@ export function Header() {
               <MobileSingleLink href="/about"   label="About" />
               <MobileSingleLink href="/contact" label="Contact" />
               <div className="pt-4 space-y-2 border-t border-slate-100">
+                <a
+                  href="https://marginfy.vercel.app/auth/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-brand-blue-500 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors font-heading"
+                >
+                  Log In to Marginfy App
+                </a>
                 <Button className="w-full" variant="secondary" asChild>
                   <Link href="/book-a-call">Book a Discovery Call</Link>
                 </Button>
